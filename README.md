@@ -28,6 +28,8 @@ Exploratory Data Analysis is the initial investigations process on the data to f
  
 ![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/raw_data_EDA.png) 
 
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/data_infomation_EDA.png)
+
 After going through the data description to understand the raw data and information, I check the shape of the raw data including getting the information of data. The first point that is the data has a column named Id which is unnecessary. I can drop the Id columns or set it as the index column. As the result, the data dimension reduces from 81 columns to 80 columns. Secondly, a figure above shows that some columns contain the missing value. This topic will be covered in the later section.
 
 
@@ -35,13 +37,16 @@ After going through the data description to understand the raw data and informat
 
 The target variable of this project is the sale price. To be more understanding in the target variable, data visualization is a tool to make data more easily to interpret. I used the distribution plot and Q-Q plot to understand the target variable of regression analysis. 
 
+
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/saleprice_EDA.png)
+
 According to the graph above, the distribution of the dependant variable is right-skewed. As you see from the SalePrice Distribution, the price is positive-skew distribution. The data may violate the assumption of linear regression as it assumes that the error terms will follow the normal distribution when we used the skewed target, the error or residual will usually be skewed. Secondly, the Quatile-Quatile plot shows that the target variable does not follow normal distribution which I will need to handle. The solution of this problem can use log transformation which converts the target variable to be normally distributed. On the other hand, the value of the house price will stay positive as it should be. According to the goal is dollar value estimation, I will not transform the data and let it as it be.
 
 ## Top 10 correlated features to target variable
  
 The Top 10 correlated features to target variable describe the movement of property price based on the change of the value of the individual feature by 1 unit. For example, the overall quality of the property is positively correlated to the SalePrice. It means that when the OverallQual value change by 1 unit. The SalePrice value will change in the same direction with OverallQual by 1 unit and vice versa. The figure below shows the relation between 10 features in the correlation aspect.
 
-
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/correlation_%2010_saleprice.png)
  
 According to the table above, there are two points concerns about the correlation table. First of all, the higher correlation to the SalePrice will have a higher chance that this feature will be important in the regression analysis. It means that all these features in the table above will be important in the model later. Second is multicollinearity. GarageArea and GarageCars are highly correlated with the value of 0.88. As a Rule of Thumb, the area of the garage will result in the higher car space in the property. That is the reason why GarageArea and GarageCars is a high correlation. To prevent multicollinearity, I will drop the GarageArea Column because the GarageCars has a higher correlation to the target variable.
 
@@ -51,13 +56,17 @@ According to the table above, there are two points concerns about the correlatio
 
 According to data description, the GrLivArea column is the living area above ground in square feet which is highly correlated to the price of the property. The scatter plot is a type of visualization using coordinates to display values of two variables for a set of data. The graph below shows the scatter plot of SalePrice and GrLivArea column.
  
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/scatter_saleprice_grliv.png)
+
 
 The figure above shows the pattern between SalePrice and GrLivArea are moving in the same direction as the correlation value described. As you can see from the graph, there are two obvious points of data which can identify as the outliers. The outliers display on the bottom right of the graph which may reflect the negative result in the regression model. So, I decided to drop the 2 rows of data as the outliers.
 
 ## Boxplot of SalePrice and GarageCars
 
 Based on the top 10 correlation matrix, the OverallQual and GarageCars columns are the two of the highest correlated values to the property price. Boxplot is a standardized way of displaying the distribution of data based on five descriptive statistic values. The values included minimum, first quartile, median, third quartile and maximum. This graph can detect the outlier based on these five values and also identify the skewness of data.
-  
+ 
+
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/boxplot_saleprice_garagecars_overallqual.png)  
 
 The graph above shows that the higher the overall quality of the property will result in a higher price. On the other hands, the Garage Cars graph shows that the price will be rise based on the number of parking spot available in the house with only one condition. It seems that four parking spots are unnecessary in the property because it does not reflect in the house price risen. Besides, the median value of the property with 4 parking spots is higher than the median of the property with 2 parking spots. Besides, there are outliers based on the graphs above. The outlier shows above is a point that out of the range of 1.5 times of interquartile range (Q1 – 1.5 * IQR or Q3 + 1.5*IQR) or whiskers. I decided to drop all the value that can classify as an outlier from the graph above to get a more accurate result.
 
@@ -66,7 +75,7 @@ The graph above shows that the higher the overall quality of the property will r
 
 The missing value in the data is the important aspect that data scientist needs to handle. According to Ames housing data, there are 19 features that contain null values. The table below shows the name of the feature, missing percentage, description of the feature, filled value, and meaning of imputed data.
 
- 
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/missing_value_table.png)
 
 According to the table above, the most missing features are PoolQC, MiscFeature, Alley, and Fence respectively. I decided to use the description of data and data characteristic to define the missing value of each feature. For example, the PoolQC column uses the input as the indicator of the quality of the pool. I classify this column as the categorical value. So, the imputation of this column is ‘None’ which means the column does not have a pool in the property. The missing value can handle in various ways. In this project, I define the imputation of this data in 3 categories  
 
