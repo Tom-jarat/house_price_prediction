@@ -86,9 +86,7 @@ According to the table above, the most missing features are PoolQC, MiscFeature,
 
 # Feature Engineering 
 
-As Features are important attributes to predictive models and 
-
-Feature engineering is the process of using domain knowledge to extract features from raw data via data mining techniques. These features can be used to improve the performance of machine learning algorithms. 
+As Features are important attributes to predictive models and Feature engineering is the process of using domain knowledge to extract features from raw data via data mining techniques. These features can be used to improve the performance of machine learning algorithms. 
 
 
 ## Data Types
@@ -96,7 +94,8 @@ Feature engineering is the process of using domain knowledge to extract features
 Based on Ames housing data, there are 2 types of data. One is numeric data such as Area of Basement, Living area, and Pool Area. Another is categorical data. This data tells the condition or other characteristic of property including Condition of the house, Fireplace Quality.  
 
 
- 
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/data_type.png)
+
 
 According to the figure above, the conversion of data type is applied to the columns that should not be in the data type. The characteristic of year should not count as number because it will affect to the model as the magnitude of number result in the importance of the features. Therefore, I convert it into string to be classify as categorical value. The MSSubClass also identify the type of dwelling involved in sale in numeric value. As it does not measure the as the continuous value. So, I decided to convert it into string to classify as categorical value.
 
@@ -105,6 +104,7 @@ According to the figure above, the conversion of data type is applied to the col
 
 The skewed data does not harm a regression analysis as skewed residual does. The skewed data may result in skewed residual. So, I decided to use log transformation to transform data to be normally distributed. The log transformation only applies to the numeric data. The pictures below show the skewness of each numeric variable before and after transformation of each independent variable.
 
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/skewness%20data.png)
   
 
 Based on the pictures above, the most skewed data are MiscVal, PoolArea, 3SsnPorch, and LowQualFinSF respectively.  The conversion of independent variables using log transformation do not change the distribution to normally distributed as there are too many inputs as zero such as PoolArea column. According to the column, there are many properties that does not contain pool in the area. So, the inputs are zero does not effectively reduce the skewness of the data.
@@ -119,12 +119,15 @@ In this project, I used 3 regression models including linear, ridge, and lasso r
 After implementing each model as mention above, the selection of model will use the metrics including mean square error and R square to select the best model among three models. Furthermore, the selection of model also applied the characteristic of regression to help define the quality of data and model.  
 
 ## Linear regression
-
+![alt text]()
  
-
 ## Ridge regression
+
+![alt text]()
  
 ## Lasso regression
+
+![alt text]()
  
 
 
@@ -140,10 +143,10 @@ the metric is divided into test and train data. The linear regression seems to b
 
 As the predicted property price must be related to the observed house price, the first graph shows how well the model perform between 3 linear model. After I plotted the predicted price and the observed price, the second figure shows the residual of each model which both graphs are divided into test, train and whole data to validate the linear regression assumption.  
 
+![alt text]()
 
 
-
- 
+ ![alt text]()
 
  
 
@@ -154,7 +157,7 @@ The graph above shows the relation of the predicted price to the SalePrice colum
 
 After the fixed features were used to identify the model that perform well with this data set, the residual values of the model were used to find the unexplained data by the first model. I used Ridge and Lasso regression to identify the potential features to find a potential investment opportunity. 
 
- 
+ ![alt text]()
 
 
  
