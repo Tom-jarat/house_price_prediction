@@ -26,7 +26,7 @@ In this project, I used regression analysis which is the selection of 3 models (
 
 Exploratory Data Analysis is the initial investigations process on the data to find a pattern and test the hypothesis and check the assumption of the project.  
  
- 
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/raw_data_EDA.png) 
 
 After going through the data description to understand the raw data and information, I check the shape of the raw data including getting the information of data. The first point that is the data has a column named Id which is unnecessary. I can drop the Id columns or set it as the index column. As the result, the data dimension reduces from 81 columns to 80 columns. Secondly, a figure above shows that some columns contain the missing value. This topic will be covered in the later section.
 
