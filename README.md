@@ -119,15 +119,15 @@ In this project, I used 3 regression models including linear, ridge, and lasso r
 After implementing each model as mention above, the selection of model will use the metrics including mean square error and R square to select the best model among three models. Furthermore, the selection of model also applied the characteristic of regression to help define the quality of data and model.  
 
 ## Linear regression
-![alt text]()
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/linear_regression_result_1.png)
  
 ## Ridge regression
 
-![alt text]()
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/ridge_regression_result_1.png)
  
 ## Lasso regression
 
-![alt text]()
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/lasso_regression_result_1.png)
  
 
 
@@ -143,10 +143,10 @@ the metric is divided into test and train data. The linear regression seems to b
 
 As the predicted property price must be related to the observed house price, the first graph shows how well the model perform between 3 linear model. After I plotted the predicted price and the observed price, the second figure shows the residual of each model which both graphs are divided into test, train and whole data to validate the linear regression assumption.  
 
-![alt text]()
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/residual_plot_1.png)
 
 
- ![alt text]()
+![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/residual_plot_2.png)
 
  
 
@@ -157,7 +157,7 @@ The graph above shows the relation of the predicted price to the SalePrice colum
 
 After the fixed features were used to identify the model that perform well with this data set, the residual values of the model were used to find the unexplained data by the first model. I used Ridge and Lasso regression to identify the potential features to find a potential investment opportunity. 
 
- ![alt text]()
+ ![alt text](https://github.com/Tom-jarat/house_price_prediction/blob/master/Picture/ridge_and_lasso_result_2.png)
 
 
  
